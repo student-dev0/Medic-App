@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medic_clinic_app/screens/Onboarding%20Screens/user_info_screen.dart';
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -9,7 +10,7 @@ class UserScreen extends StatefulWidget {
 }
 
 class _UserScreenState extends State<UserScreen> {
-  String? selectedRole;
+  String? selectedRole; // patient or doctor 
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class _UserScreenState extends State<UserScreen> {
         backgroundColor: Colors.white,
         title: Row(
           children: [
-            SizedBox(width: screenWidth * 0.25),
+            SizedBox(width: screenWidth * 0.3),
             Image(
               image: AssetImage('assets/images/logo_health.png'),
               height: 30,
@@ -226,7 +227,8 @@ class _UserScreenState extends State<UserScreen> {
               onPressed: selectedRole == null
                   ? null
                   : () {
-                      print("selected:$selectedRole");
+                      print('Selected Role: $selectedRole');
+                      Navigator.of(context).push(MaterialPageRoute(builder: (_) => UserInfoScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(300, 50),
