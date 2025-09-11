@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medic_clinic_app/screens/Onboarding%20Screens/identity_set.dart';
+import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({super.key});
@@ -96,7 +97,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             color: selectedGender == "Male"
-                                ? Colors.green
+                                ? Color(0xFF66CA98)
                                 : Colors.grey[300]!,
                             width: 1.5,
                           ),
@@ -108,7 +109,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                               width: 50,
                               decoration: BoxDecoration(
                                 color: selectedGender == "Male"
-                                    ? Colors.green
+                                    ? Color(0xFF66CA98)
                                     : Colors.grey[200],
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -165,7 +166,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             color: selectedGender == "Female"
-                                ? Colors.green
+                                ? Color(0xFF66CA98)
                                 : Colors.grey[300]!,
                             width: 1.5,
                           ),
@@ -177,7 +178,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                               width: 50,
                               decoration: BoxDecoration(
                                 color: selectedGender == "Female"
-                                    ? Colors.green
+                                    ? Color(0xFF66CA98)
                                     : Colors.grey[200],
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -214,16 +215,21 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
             ),
             SizedBox(height: screenheight * 0.05),
             IdentitySet(),
-            SizedBox(height: screenheight * 0.15),
+            SizedBox(height: screenheight * 0.25),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: Color(0xFF66CA98),
                 minimumSize: const Size(300, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => UserSignUp()),
+                );
+              },
               child: const Text(
                 "Continue",
                 style: TextStyle(color: Colors.white, fontSize: 16),

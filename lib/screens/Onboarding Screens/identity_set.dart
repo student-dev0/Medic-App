@@ -88,7 +88,7 @@ class _IdentitySetState extends State<IdentitySet>
     List<String> years = List.generate(60, (i) => (i + 1960).toString());
     return Column(
       children: [Row(children: [SizedBox(width: 15),Text('Your birthday',style:GoogleFonts.outfit(fontSize:20,fontWeight: FontWeight.w500 ))],),
-        SizedBox(height: 15),
+        SizedBox(height: 20),
         Row(
           children: [
             SizedBox(width: 10),
@@ -130,7 +130,7 @@ class _IdentitySetState extends State<IdentitySet>
             SizedBox(width: 10),
           ],
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 40),
         Row(children: [SizedBox(width: 15),Text('Your location',style:GoogleFonts.outfit(fontSize:20,fontWeight: FontWeight.w500 ))],),
         SizedBox(height: 15,),
         SizedBox(width: screenWidth*0.9,

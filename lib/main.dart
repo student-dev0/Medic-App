@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:medic_clinic_app/screens/splash_screen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://tzhybzlromlgfrtnxgro.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6aHliemxyb21sZ2ZydG54Z3JvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0OTU5MzksImV4cCI6MjA3MzA3MTkzOX0.ZG3ZzLtSowH-oH8XrGbHTKeeM7Wu1tthcP9wNrtXJ5A',
+  );
   runApp(const MyApp());
 }
 

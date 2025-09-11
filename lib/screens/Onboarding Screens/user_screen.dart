@@ -79,7 +79,7 @@ class _UserScreenState extends State<UserScreen> {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                           color: selectedRole == "patient"
-                              ? Colors.green
+                              ? Color(0xFF66CA98)
                               : Colors.grey[300]!,
                           width: 2,
                         ),
@@ -92,7 +92,7 @@ class _UserScreenState extends State<UserScreen> {
                             width: 50,
                             decoration: BoxDecoration(
                               color: selectedRole == "patient"
-                                  ? Colors.green
+                                  ? Color(0xFF66CA98)
                                   : Colors.grey[200],
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -114,7 +114,7 @@ class _UserScreenState extends State<UserScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: selectedRole == "patient"
-                                      ? Colors.green
+                                      ? Color(0xFF66CA98)
                                       : Colors.black87,
                                   fontSize: 16,
                                 ),
@@ -124,7 +124,7 @@ class _UserScreenState extends State<UserScreen> {
                                 "Book appointments, receive reports",
                                 style: TextStyle(
                                   color: selectedRole == "patient"
-                                      ? Colors.green
+                                      ? Color(0xFF66CA98)
                                       : Colors.grey[600],
                                   fontSize: 14,
                                 ),
@@ -161,7 +161,7 @@ class _UserScreenState extends State<UserScreen> {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                           color: selectedRole == "doctor"
-                              ? Colors.green
+                              ? Color(0xFF66CA98)
                               : Colors.grey[300]!,
                           width: 2,
                         ),
@@ -174,7 +174,7 @@ class _UserScreenState extends State<UserScreen> {
                             width: 50,
                             decoration: BoxDecoration(
                               color: selectedRole == "doctor"
-                                  ? Colors.green
+                                  ? Color(0xFF66CA98)
                                   : Colors.grey[200],
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -196,7 +196,7 @@ class _UserScreenState extends State<UserScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: selectedRole == "doctor"
-                                      ? Colors.green
+                                      ? Color(0xFF66CA98)
                                       : Colors.black87,
                                   fontSize: 16,
                                 ),
@@ -206,7 +206,7 @@ class _UserScreenState extends State<UserScreen> {
                                 "Connect with patients, manage sessions",
                                 style: TextStyle(
                                   color: selectedRole == "doctor"
-                                      ? Colors.green
+                                      ? Color(0xFF66CA98)
                                       : Colors.grey[600],
                                   fontSize: 14,
                                 ),
@@ -235,7 +235,7 @@ class _UserScreenState extends State<UserScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
-                      backgroundColor: Colors.green,
+                      backgroundColor: Color(0xFF66CA98),
                     ),
               child: Text('Continue',style: TextStyle(fontSize: 16,color:Colors.white),),
             ),

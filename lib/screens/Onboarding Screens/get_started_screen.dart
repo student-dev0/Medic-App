@@ -7,6 +7,10 @@ class GetStartedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+     double screenWidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -17,7 +21,8 @@ class GetStartedScreen extends StatelessWidget {
             children: [
               // Doctor Image Background
               Image(
-                image: AssetImage('assets/images/smaller_starting_image.png'),
+                image: AssetImage('assets/images/starting_image.png'),
+                width: screenWidth*1,
               ),
 
               // Logo Positioned at the top
@@ -34,10 +39,10 @@ class GetStartedScreen extends StatelessWidget {
           const SizedBox(height: 20),
           // Expanded section for spacing + text
           SizedBox(
-            height: 80,
+            height: screenheight*0.1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: [const SizedBox(height: 10),
                 Text(
                   "Manage your health and \n             happy future",
                   style: GoogleFonts.outfit(
@@ -49,13 +54,13 @@ class GetStartedScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 30),
+           SizedBox(height:screenheight*0.07),
 
           // Bottom Button
           Padding(
             padding: const EdgeInsets.all(20),
             child: SizedBox(
-              width: 250,
+              width: screenWidth*0.5,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -64,7 +69,7 @@ class GetStartedScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF3DDC97),
+                  backgroundColor: const Color(0xFF66CA98),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   ),
