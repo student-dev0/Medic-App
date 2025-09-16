@@ -215,7 +215,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
             ),
             SizedBox(height: screenheight * 0.05),
             IdentitySet(),
-            SizedBox(height: screenheight * 0.25),
+            SizedBox(height: screenheight * 0.20),
+           
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF66CA98),

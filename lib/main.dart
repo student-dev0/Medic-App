@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medic_clinic_app/screens/splash_screen.dart';
+import 'package:medic_clinic_app/Dashboard screens/home_page.dart'; // <-- Add this import
+import 'package:medic_clinic_app/screens/User Authentication screens/user_sign_in.dart'; // <-- Add this import
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -11,8 +13,39 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _supabase = Supabase.instance.client;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // 👇 Listen for auth state changes globally
+    _supabase.auth.onAuthStateChange.listen((data) {
+      final session = data.session;
+
+      if (session != null) {
+        // ✅ Logged in → navigate to Home
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const HomePage()),
+          (route) => false,
+        );
+      } else {
+        // ❌ Logged out → back to SignIn
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const UserSignIn()),
+          (route) => false,
+        );
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

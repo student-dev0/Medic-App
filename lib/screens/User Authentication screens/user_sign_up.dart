@@ -31,7 +31,7 @@ class _UserSignUpState extends State<UserSignUp> {
 
         if (response.user != null) {
           // ✅ Successfully signed up
-          // 
+          //
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text("Account created! Please check your email."),
@@ -78,7 +78,8 @@ class _UserSignUpState extends State<UserSignUp> {
           ],
         ),
       ),
-      body: SingleChildScrollView(scrollDirection: Axis.vertical,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -95,9 +96,9 @@ class _UserSignUpState extends State<UserSignUp> {
                 ),
               ],
             ),
-        
+
             SizedBox(height: 40),
-        
+
             // This column is for the textfield
             Form(
               key: _formKey,
@@ -127,18 +128,18 @@ class _UserSignUpState extends State<UserSignUp> {
                             filled: true,
                             fillColor: Color(0xFFEFF2F1),
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(color:Color(0xFF66CA98),),
+                              borderSide: BorderSide(color: Color(0xFF66CA98)),
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          validator: validateFullName,
+                          validator: validatefullName,
                         ),
                       ),
                     ],
                   ),
-        
+
                   SizedBox(height: 30),
-        
+
                   Column(
                     children: [
                       Row(
@@ -163,18 +164,18 @@ class _UserSignUpState extends State<UserSignUp> {
                             filled: true,
                             fillColor: Color(0xFFEFF2F1),
                             border: OutlineInputBorder(
-                               borderSide: BorderSide(color:Color(0xFF66CA98),),
+                              borderSide: BorderSide(color: Color(0xFF66CA98)),
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          validator: validateEmail,
+                          validator: validateemail,
                         ),
                       ),
                     ],
                   ),
-        
+
                   SizedBox(height: 30),
-        
+
                   Column(
                     children: [
                       Row(
@@ -199,7 +200,6 @@ class _UserSignUpState extends State<UserSignUp> {
                             filled: true,
                             fillColor: Color(0xFFEFF2F1),
                             border: OutlineInputBorder(
-                              
                               borderRadius: BorderRadius.circular(12),
                             ),
                             suffixIcon: IconButton(
@@ -215,14 +215,14 @@ class _UserSignUpState extends State<UserSignUp> {
                               },
                             ),
                           ),
-                          validator: validatePassword,
+                          validator: validatepassword,
                         ),
                       ),
                     ],
                   ),
-        
+
                   SizedBox(height: 5),
-        
+
                   Row(
                     children: [
                       SizedBox(width: screenWidth * 0.02),
@@ -254,7 +254,7 @@ class _UserSignUpState extends State<UserSignUp> {
                               ),
                               TextSpan(
                                 text: "Privacy Policy",
-        
+
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   color: Color(0xFF66CA98),
@@ -267,16 +267,15 @@ class _UserSignUpState extends State<UserSignUp> {
                       ),
                     ],
                   ),
-        
-                  SizedBox(height: screenheight * 0.33),
-        
+
+                  // SizedBox(height: screenheight * 0.25),
+                  Spacer(),
+
                   SizedBox(
                     width: screenWidth * 0.8,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {
-                        _agreetoTerms ? _signUpUser : null;
-                      },
+                      onPressed: _agreetoTerms ? _signUpUser : null,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFF66CA98),
                         shape: RoundedRectangleBorder(

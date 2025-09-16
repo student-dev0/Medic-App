@@ -21,8 +21,8 @@ class GetStartedScreen extends StatelessWidget {
             children: [
               // Doctor Image Background
               Image(
-                image: AssetImage('assets/images/starting_image.png'),
-                width: screenWidth*1,
+                image: AssetImage('assets/images/starting_image.png',),
+                width: double.infinity,
               ),
 
               // Logo Positioned at the top

@@ -1,13 +1,13 @@
 // import 'package:flutter/material.dart';
 
-String? validateFullName(String? value) {
+String? validatefullName(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your full name';
   }
 
   // Username regex pattern (alphanumeric and underscores, 3-16 characters)
-  final RegExp usernameRegex = RegExp(r'^[a-zA-Z0-9_]{3,16}$');
-  if (!usernameRegex.hasMatch(value)) {
+  final RegExp fullNameRegex = RegExp(r'^[a-zA-Z0-9_]{3,16}$');
+  if (!fullNameRegex.hasMatch(value)) {
     return 'Username must be 3-16 characters long and contain only letters, numbers, and underscores';
   }
 
@@ -16,7 +16,7 @@ String? validateFullName(String? value) {
 
 
 
-String? validateEmail(String? value) {
+String? validateemail(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your email';
   }
@@ -30,7 +30,7 @@ String? validateEmail(String? value) {
   return null;
 }
 
-String? validatePassword(String? value) {
+String? validatepassword(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your password';
   }
