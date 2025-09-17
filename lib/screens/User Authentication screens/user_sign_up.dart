@@ -30,7 +30,7 @@ class _UserSignUpState extends State<UserSignUp> {
         );
 
         if (response.user != null) {
-          // ✅ Successfully signed up
+          // Successfully signed up
           //
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -104,7 +104,7 @@ class _UserSignUpState extends State<UserSignUp> {
               key: _formKey,
               child: Column(
                 children: [
-                  Column(
+                  Column(crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         children: [
@@ -268,8 +268,8 @@ class _UserSignUpState extends State<UserSignUp> {
                     ],
                   ),
 
-                  // SizedBox(height: screenheight * 0.25),
-                  Spacer(),
+                  SizedBox(height: screenheight * 0.3),
+                  // Spacer(),
 
                   SizedBox(
                     width: screenWidth * 0.8,

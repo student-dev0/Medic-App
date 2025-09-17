@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medic_clinic_app/screens/splash_screen.dart';
-import 'package:medic_clinic_app/Dashboard screens/home_page.dart'; // <-- Add this import
+import 'package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart';
+import 'package:medic_clinic_app/screens/splash_screen.dart';// <-- Add this import
 import 'package:medic_clinic_app/screens/User Authentication screens/user_sign_in.dart'; // <-- Add this import
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -27,18 +27,18 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    // 👇 Listen for auth state changes globally
+    // Listen for auth state changes globally
     _supabase.auth.onAuthStateChange.listen((data) {
       final session = data.session;
 
       if (session != null) {
-        // ✅ Logged in → navigate to Home
+        //  Logged in → navigate to Home
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const HomePage()),
           (route) => false,
         );
       } else {
-        // ❌ Logged out → back to SignIn
+        // Logged out → back to SignIn
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const UserSignIn()),
           (route) => false,

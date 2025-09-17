@@ -67,6 +67,7 @@ flutter:
    - assets/images/Logo.png
    - assets/images/icon_female.png
    - assets/images/icon_male.png
+   - assets/images/icon_notification.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

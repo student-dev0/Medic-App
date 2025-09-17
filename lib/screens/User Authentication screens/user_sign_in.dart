@@ -1,8 +1,8 @@
 import 'package:app_links/app_links.dart';
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
-import "package:medic_clinic_app/Dashboard%20screens/home_page.dart";
 import "package:medic_clinic_app/models/validation_models.dart";
+import "package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart";
 import "package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart";
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'dart:async';
@@ -45,7 +45,7 @@ class _UserSignInState extends State<UserSignIn> {
 
           // Option A: rely on your global onAuthStateChange in main.dart to navigate.
           // Option B: if you prefer immediate local navigation, check response:
-          if (resp.session != null && mounted) {
+          if (mounted) {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (_) => const HomePage()),
               (route) => false,

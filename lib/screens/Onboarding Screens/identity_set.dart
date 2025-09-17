@@ -133,7 +133,7 @@ class _IdentitySetState extends State<IdentitySet>
         SizedBox(height: 40),
         Row(children: [SizedBox(width: 15),Text('Your location',style:GoogleFonts.outfit(fontSize:20,fontWeight: FontWeight.w500 ))],),
         SizedBox(height: 15,),
-        SizedBox(width: screenWidth*0.9,
+        SizedBox(width: screenWidth*0.95,
           child: TextField(
             controller: countryController,
             readOnly: true,
