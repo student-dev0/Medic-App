@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class DoctorCard extends StatefulWidget {
+class DoctorInfoModelAppointment extends StatefulWidget {
   final String assetImage;
   final String name;
   final String specialization;
@@ -12,7 +13,7 @@ class DoctorCard extends StatefulWidget {
   final int time = DateTime.now().hour;
   final VoidCallback? onTap;
 
-  DoctorCard({
+  DoctorInfoModelAppointment({
     super.key,
     required this.assetImage,
     required this.name,
@@ -26,10 +27,10 @@ class DoctorCard extends StatefulWidget {
     required this.onTap,
   });
   @override
-  State<DoctorCard> createState() => _DoctorCardState();
+  State<DoctorInfoModelAppointment> createState() => _DoctorInfoModelAppointmentState();
 }
 
-class _DoctorCardState extends State<DoctorCard> {
+class _DoctorInfoModelAppointmentState extends State<DoctorInfoModelAppointment> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -38,7 +39,7 @@ class _DoctorCardState extends State<DoctorCard> {
       borderRadius: BorderRadius.circular(12),
       onTap: () {},
       child: Container(
-        width: 400,
+        width: 500,
         height: 140,
         padding: EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -74,14 +75,14 @@ class _DoctorCardState extends State<DoctorCard> {
                         children: [
                           Text(
                             ('${widget.name}\n${widget.specialization}'),
-                            style: const TextStyle(
+                            style: GoogleFonts.lato(
                               fontWeight: FontWeight.w500,
                               fontSize: 20,
                               color: Colors.white,
                             ),
                           ),
 
-                          SizedBox(width: screenWidth * 0.20),
+                          SizedBox(width: screenWidth * 0.40),
                           Padding(
                             padding: const EdgeInsets.only(right: 8.0),
                             child: Text(
@@ -115,7 +116,7 @@ class _DoctorCardState extends State<DoctorCard> {
               ],
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Row(
@@ -123,31 +124,32 @@ class _DoctorCardState extends State<DoctorCard> {
                 children: [
                   const Icon(
                     Icons.calendar_today,
-                    size: 16,
+                    size: 24,
                     color: Colors.white,
                   ),
                   const SizedBox(width: 4),
                   Text(
                     (widget.date).toString(),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white,fontSize: 24),
                   ),
                   const SizedBox(width: 4),
                   Text(
                     (widget.month),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white,fontSize: 24),
                   ),
                   const SizedBox(width: 16),
-                  const Icon(Icons.access_time, size: 16, color: Colors.white),
+                  const Icon(Icons.access_time, size: 24, color: Colors.white),
                   const SizedBox(width: 4),
                   Text(
                     (widget.time.toString()),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white,fontSize: 24),
                   ),
                   const Spacer(),
                   Text(
-                    (widget.amount).toString(),
+                    ('\$ ${widget.amount}').toString(),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 24,
                       color: Colors.white,
                     ),
                   ),

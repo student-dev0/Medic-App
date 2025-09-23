@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medic_clinic_app/screens/Onboarding%20Screens/identity_set.dart';
 import 'package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart';
-// import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart';
+
+// import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_in.dart';
+import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart';
+
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({super.key});
@@ -31,14 +34,17 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
           ],
         ),
       ),
-      body: ConstrainedBox(constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+        ),
         child: SingleChildScrollView(
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: screenheight * 0.05),
-          
+
                 Text(
                   'A little about yourself',
                   style: GoogleFonts.outfit(
@@ -48,7 +54,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-          
+
                 Text(
                   'Provide your information',
                   style: GoogleFonts.outfit(
@@ -58,7 +64,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ),
                 ),
                 SizedBox(height: 60),
-          
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -72,9 +78,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     ),
                   ],
                 ),
-          
+
                 SizedBox(height: 10),
-          
+
                 Row(
                   children: [
                     AnimatedScale(
@@ -145,7 +151,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         ),
                       ),
                     ),
-          
+
                     AnimatedScale(
                       scale: selectedGender == "Female" ? 1.05 : 1.0,
                       duration: Duration(milliseconds: 250),
@@ -217,14 +223,11 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ],
                 ),
                 SizedBox(height: screenheight * 0.05),
-          
-          
+
                 IdentitySet(),
-          
-          
+
                 SizedBox(height: screenheight * 0.2),
-               
-               
+
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF66CA98),
@@ -244,7 +247,6 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
-                
               ],
             ),
           ),

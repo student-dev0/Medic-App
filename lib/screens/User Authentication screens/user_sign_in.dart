@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:medic_clinic_app/models/validation_models.dart";
 import "package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart";
+import "package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart";
 import "package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart";
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'dart:async';
@@ -88,7 +89,7 @@ class _UserSignInState extends State<UserSignIn> {
         if (!mounted) return;
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const HomePage()),
+          MaterialPageRoute(builder: (_) => const WelcomeBackScreen()),
         );
       } else {
         //No session, show generic error
@@ -263,8 +264,8 @@ class _UserSignInState extends State<UserSignIn> {
                     ),
                   ),
 
-                  // SizedBox(height: screenheight * 0.38),
-                  Spacer(),
+                  SizedBox(height: screenheight * 0.35),
+                  // Spacer(),
 
                   SizedBox(
                     width: screenWidth * 0.8,

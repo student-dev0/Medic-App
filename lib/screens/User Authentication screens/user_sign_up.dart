@@ -268,7 +268,7 @@ class _UserSignUpState extends State<UserSignUp> {
                     ],
                   ),
 
-                  SizedBox(height: screenheight * 0.3),
+                  SizedBox(height: screenheight * 0.25),
                   // Spacer(),
 
                   SizedBox(
