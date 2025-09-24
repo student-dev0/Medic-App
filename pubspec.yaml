@@ -68,11 +68,17 @@ flutter:
    - assets/images/icon_female.png
    - assets/images/icon_male.png
    - assets/images/icon_notification.png
-   - assets/DoctorImages/Eleanor_Pena.png
+   - assets/images/Eleanor_Pena.png
    - assets/images/icon_heart.png 
    - assets/images/icon_tooth.png
    - assets/images/icon_eye.png
    - assets/images/Doctor3.jpg
+   - assets/images/image_Dr. Jacob_Jones.png
+   - assets/images/image_Dr.Floyd_Miles.png
+   - assets/images/image_Dr.Guy_Hawkins.png
+   - assets/images/image_Dr.Jane_Cooper.png
+   - assets/images/image_Dr.Savannah_Nguyen.png 
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

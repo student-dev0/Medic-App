@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Color(0xFFEFF2F1),
-      // appBar:AppBar(leading: BackButton(),),
+
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
 
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
+                  padding: const EdgeInsets.only(bottom: 20.0),
                   child: Container(
                     width: 45,
                     height: 50,
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 10),
 
             DoctorInfoModelAppointment(
-              assetImage: 'assets/DoctorImages/Eleanor_Pena.png',
+              assetImage: 'assets/images/Eleanor_Pena.png',
               name: 'Eleanor Pena',
               specialization: 'Pediatrics',
               date: 27,
@@ -164,44 +164,61 @@ class _HomePageState extends State<HomePage> {
               reviews: 300,
               amount: 90,
               rating: 4.8,
-              time: '${TimeOfDay.now().hour} pm',
+              time: '${TimeOfDay.now().hourOfPeriod} pm',
               onTap: () {},
             ),
 
-            SizedBox(height: 15,),
+            SizedBox(height: 15),
 
-            // assets\DoctorImages\Eleanor_Pena.png
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Categories',
+                    style: GoogleFonts.lato(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
-        
-             Padding(
-               padding: const EdgeInsets.symmetric(horizontal:16.0),
-               child: Row( mainAxisAlignment: MainAxisAlignment.start,
-                 children: [
-                   Text('Categories',style:GoogleFonts.lato(fontSize: 18,fontWeight: FontWeight.bold)),
-                 ],
-               ),
-             ),
+            SizedBox(height: 10),
 
-             SizedBox(height: 10,),
-
-             SingleChildScrollView(scrollDirection: Axis.horizontal,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Row(
                   children: [
-                    CategoriesModel(assetImage:'assets/images/icon_heart.png', color: Color(0xFFFFE2DC), text: 'Cardiologist'),
+                    CategoriesModel(
+                      assetImage: 'assets/images/icon_heart.png',
+                      color: Color(0xFFFFE2DC),
+                      text: 'Cardiologist',
+                    ),
                     SizedBox(width: 12),
-                    CategoriesModel(assetImage:'assets/images/icon_eye.png', color: Color(0xFFE0EAF9), text: 'Ophthamologist'),
+                    CategoriesModel(
+                      assetImage: 'assets/images/icon_eye.png',
+                      color: Color(0xFFE0EAF9),
+                      text: 'Ophthamologist',
+                    ),
                     SizedBox(width: 12),
-                    CategoriesModel(assetImage:'assets/images/icon_tooth.png', color: Color(0xFFFFF7DC), text: 'Dentist'),
+                    CategoriesModel(
+                      assetImage: 'assets/images/icon_tooth.png',
+                      color: Color(0xFFFFF7DC),
+                      text: 'Dentist',
+                    ),
                   ],
                 ),
               ),
-             ),
+            ),
 
-             SizedBox(height: 10,),
+            SizedBox(height: 10),
 
-              Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -227,9 +244,54 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 10),
 
-            DoctorCard(assetImage: '', name: 'Dr Floyd Miles', specialization: 'Dentist', reviews: 320, rating: 4.9, onTap: (){})
-            
-
+            SizedBox(height: 400,
+              child: SingleChildScrollView(scrollDirection:Axis.vertical,
+                child: Padding(
+                  padding: const EdgeInsets.only(top:16.0,bottom: 16.0),
+                  child: Column(
+                    children: [
+                      DoctorCard(
+                        assetImage: 'assets/images/image_Dr.Floyd_Miles.png',
+                        name: 'Dr Floyd Miles',
+                        specialization: 'Dentist',
+                        reviews: 320,
+                        rating: 4.9,
+                        onTap: () {},
+                      ),
+                      DoctorCard(
+                        assetImage: 'assets/images/image_Dr.Guy_Hawkins.png',
+                        name: 'Dr Guy Hawkins',
+                        specialization: 'Dentist',
+                        reviews: 320,
+                        rating: 4.9,
+                        onTap: () {},
+                      ),DoctorCard(
+                        assetImage: 'assets/images/image_Dr.Jane_Cooper.png',
+                        name: 'Dr Jane Cooper',
+                        specialization: 'Dentist',
+                        reviews: 320,
+                        rating: 4.9,
+                        onTap: () {},
+                      ),DoctorCard(
+                        assetImage: 'assets/images/image_Dr.Savannah_Nguyen.png',
+                        name: 'Dr Savannah Nguyen',
+                        specialization: 'Dentist',
+                        reviews: 320,
+                        rating: 4.9,
+                        onTap: () {},
+                      ),DoctorCard(
+                        assetImage: 'assets/images/image_Dr. Jacob_Jones.png',
+                        name: 'Dr Jacob Jones',
+                        specialization: 'Dentist',
+                        reviews: 320,
+                        rating: 4.9,
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

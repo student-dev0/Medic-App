@@ -4,7 +4,7 @@ import 'package:medic_clinic_app/screens/Onboarding%20Screens/identity_set.dart'
 import 'package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart';
 
 // import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_in.dart';
-import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart';
+// import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart';
 
 
 class UserInfoScreen extends StatefulWidget {

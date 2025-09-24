@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DoctorInfoModelAppointment extends StatefulWidget {
   final String assetImage;
@@ -27,20 +26,22 @@ class DoctorInfoModelAppointment extends StatefulWidget {
     required this.onTap,
   });
   @override
-  State<DoctorInfoModelAppointment> createState() => _DoctorInfoModelAppointmentState();
+  State<DoctorInfoModelAppointment> createState() =>
+      _DoctorInfoModelAppointmentState();
 }
 
-class _DoctorInfoModelAppointmentState extends State<DoctorInfoModelAppointment> {
+class _DoctorInfoModelAppointmentState
+    extends State<DoctorInfoModelAppointment> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenWidth = MediaQuery.of(context).size.width;
     // double screenheight = MediaQuery.of(context).size.height;
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: () {},
       child: Container(
         width: 500,
-        height: 140,
+        height: 130,
         padding: EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
@@ -56,7 +57,7 @@ class _DoctorInfoModelAppointmentState extends State<DoctorInfoModelAppointment>
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(
-                      'assets/images/Eleanor Pena.png',
+                      'assets/images/Eleanor_Pena.png',
                       width: 60,
                       height: 70,
                       fit: BoxFit.cover,
@@ -73,39 +74,24 @@ class _DoctorInfoModelAppointmentState extends State<DoctorInfoModelAppointment>
                         mainAxisAlignment: MainAxisAlignment.start,
 
                         children: [
-                          Text(
-                            ('${widget.name}\n${widget.specialization}'),
-                            style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-
-                          SizedBox(width: screenWidth * 0.40),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              (((widget.reviews)
-                                  .toString())), // Still needs to work on this review
-
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.white70,
+                          RichText(
+                            text: TextSpan(
+                              text: widget.name,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
-                            ),
-                          ),
-                          const SizedBox(width: 5),
-                          const Icon(
-                            Icons.star,
-                            color: Colors.orangeAccent,
-                            size: 24,
-                          ),
-                          Text(
-                            (widget.rating).toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white70,
+                              children: [
+                                TextSpan(
+                                  text: '\n${widget.specialization}',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -113,43 +99,73 @@ class _DoctorInfoModelAppointmentState extends State<DoctorInfoModelAppointment>
                     ),
                   ],
                 ),
+
+                Spacer(),
+
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '(${widget.reviews} Reviews)',
+
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white70,
+                          ),
+                        ),
+
+                        const SizedBox(width: 5),
+                        const Icon(
+                          Icons.star,
+                          color: Colors.orangeAccent,
+                          size: 16,
+                        ),
+                        Text(
+                          (widget.rating).toString(),
+                          style: TextStyle(fontSize: 16, color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
 
-            SizedBox(height: 15),
+            SizedBox(height: 12),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Icon(
-                    Icons.calendar_today,
-                    size: 24,
+                    Icons.calendar_month,
+                    size: 20,
                     color: Colors.white,
                   ),
                   const SizedBox(width: 4),
                   Text(
                     (widget.date).toString(),
-                    style: const TextStyle(color: Colors.white,fontSize: 24),
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const SizedBox(width: 4),
                   Text(
                     (widget.month),
-                    style: const TextStyle(color: Colors.white,fontSize: 24),
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const SizedBox(width: 16),
-                  const Icon(Icons.access_time, size: 24, color: Colors.white),
+                  const Icon(Icons.access_time, size: 20, color: Colors.white),
                   const SizedBox(width: 4),
                   Text(
-                    (widget.time.toString()),
-                    style: const TextStyle(color: Colors.white,fontSize: 24),
+                    '${widget.time.toString()}:00 PM',
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   const Spacer(),
                   Text(
                     ('\$ ${widget.amount}').toString(),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 24,
+                      fontSize: 18,
                       color: Colors.white,
                     ),
                   ),

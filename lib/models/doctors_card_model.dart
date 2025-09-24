@@ -8,7 +8,6 @@ class DoctorCard extends StatefulWidget {
   final int reviews;
   final double rating;
 
-
   final VoidCallback? onTap;
 
   const DoctorCard({
@@ -16,12 +15,11 @@ class DoctorCard extends StatefulWidget {
     required this.assetImage,
     required this.name,
     required this.specialization,
-   
-    
+
     required this.reviews,
-  
+
     required this.rating,
-    
+
     required this.onTap,
   });
   @override
@@ -31,18 +29,18 @@ class DoctorCard extends StatefulWidget {
 class _DoctorCardState extends State<DoctorCard> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenWidth = MediaQuery.of(context).size.width;
     // double screenheight = MediaQuery.of(context).size.height;
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: () {},
       child: Container(
         width: 500,
-        height: 140,
+        height: 100,
         padding: EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
-          color: Color(0xFFF5F5F5),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -54,7 +52,7 @@ class _DoctorCardState extends State<DoctorCard> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(
-                      'assets/images/Eleanor Pena.png',
+                      widget.assetImage,
                       width: 60,
                       height: 70,
                       fit: BoxFit.cover,
@@ -71,47 +69,24 @@ class _DoctorCardState extends State<DoctorCard> {
                         mainAxisAlignment: MainAxisAlignment.start,
 
                         children: [
-                          RichText(text:TextSpan(
-                            text: widget.name,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: '\n${widget.specialization}',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.white70,
+                          RichText(
+                            text: TextSpan(
+                              text: widget.name,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: '\n${widget.specialization}',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.grey[600],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ) ,
-                          ),
-                          SizedBox(width: screenWidth * 0.40),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              '(${widget.reviews} Reviews)',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.white70,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 5),
-                          const Icon(
-                            Icons.star,
-                            color: Colors.orangeAccent,
-                            size: 24,
-                          ),
-                          Text(
-                            (widget.rating).toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white70,
+                              ],
                             ),
                           ),
                         ],
@@ -119,10 +94,38 @@ class _DoctorCardState extends State<DoctorCard> {
                     ),
                   ],
                 ),
+
+                Spacer(),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '(${widget.reviews} Reviews)',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        const Icon(
+                          Icons.star,
+                          color: Colors.orangeAccent,
+                          size: 16,
+                        ),
+                        Text(
+                          (widget.rating).toString(),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
-
-          
           ],
         ),
       ),
