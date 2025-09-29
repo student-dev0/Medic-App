@@ -36,6 +36,13 @@ dependencies:
   supabase_flutter: ^2.0.0
   url_launcher: ^6.1.10
   app_links: ^6.4.0
+  intl: ^0.20.2
+  geolocator: ^14.0.2
+  google_maps_flutter: ^2.13.0
+  permission_handler: ^12.0.1
+  google_maps_flutter_android: ^2.18.2
+  google_maps_flutter_platform_interface: ^2.14.0
+
 
  
 
@@ -77,7 +84,10 @@ flutter:
    - assets/images/image_Dr.Floyd_Miles.png
    - assets/images/image_Dr.Guy_Hawkins.png
    - assets/images/image_Dr.Jane_Cooper.png
-   - assets/images/image_Dr.Savannah_Nguyen.png 
+   - assets/images/image_Dr.Savannah_Nguyen.png
+   - assets/images/icon_Dr.Eleanor_Pena.png
+   - assets/images/icon_phone.png
+   - assets/images/icon_chat.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medic_clinic_app/screens/Doctors%20Appointment%20Screens/elenor_pena.dart';
 
 class DoctorInfoModelAppointment extends StatefulWidget {
   final String assetImage;
@@ -38,10 +39,15 @@ class _DoctorInfoModelAppointmentState
     // double screenheight = MediaQuery.of(context).size.height;
     return InkWell(
       borderRadius: BorderRadius.circular(12),
-      onTap: () {},
+      onTap: () {
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => EleanorTransition(patient: 413, experience: '5 years', rating: 4.8)),
+        );
+      },
       child: Container(
         width: 500,
-        height: 130,
+        height: 140,
         padding: EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(

@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart';
-import 'package:medic_clinic_app/screens/splash_screen.dart';// <-- Add this import
+import 'package:medic_clinic_app/screens/splash_screen.dart'; // <-- Add this import
 import 'package:medic_clinic_app/screens/User Authentication screens/user_sign_in.dart'; // <-- Add this import
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
+import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: 'https://tzhybzlromlgfrtnxgro.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6aHliemxyb21sZ2ZydG54Z3JvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0OTU5MzksImV4cCI6MjA3MzA3MTkzOX0.ZG3ZzLtSowH-oH8XrGbHTKeeM7Wu1tthcP9wNrtXJ5A',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6aHliemxyb21sZ2ZydG54Z3JvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0OTU5MzksImV4cCI6MjA3MzA3MTkzOX0.ZG3ZzLtSowH-oH8XrGbHTKeeM7Wu1tthcP9wNrtXJ5A',
   );
+
+  final GoogleMapsFlutterPlatform mapsImplementation =
+      GoogleMapsFlutterPlatform.instance;
+  if (mapsImplementation is GoogleMapsFlutterAndroid) {
+    // Force Hybrid Composition mode.
+    mapsImplementation.useAndroidViewSurface = true;
+  }
   runApp(const MyApp());
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:medic_clinic_app/screens/Doctors%20Appointment%20Screens/elenor_pena.dart';
 
 class DoctorCard extends StatefulWidget {
   final String assetImage;
@@ -33,7 +34,9 @@ class _DoctorCardState extends State<DoctorCard> {
     // double screenheight = MediaQuery.of(context).size.height;
     return InkWell(
       borderRadius: BorderRadius.circular(12),
-      onTap: () {},
+      onTap: () {
+    
+      },
       child: Container(
         width: 500,
         height: 100,

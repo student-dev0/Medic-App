@@ -2,7 +2,7 @@ import 'package:app_links/app_links.dart';
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:medic_clinic_app/models/validation_models.dart";
-import "package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart";
+//import "package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart";
 import "package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart";
 import "package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart";
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -33,7 +33,7 @@ class _UserSignInState extends State<UserSignIn> {
     _initDeepLinks();
   }
 
-   void _initDeepLinks() {
+  void _initDeepLinks() {
     _applinks = AppLinks();
 
     // subscribe and keep subscription so we can cancel it later
@@ -42,13 +42,16 @@ class _UserSignInState extends State<UserSignIn> {
         // uri is non-nullable, so no need to check for null
         try {
           // await the restore call and optionally store session
-          final resp = await supabase.auth.getSessionFromUrl(uri, storeSession: true);
+          final resp = await supabase.auth.getSessionFromUrl(
+            uri,
+            storeSession: true,
+          );
 
           // Option A: rely on your global onAuthStateChange in main.dart to navigate.
           // Option B: if you prefer immediate local navigation, check response:
           if (mounted) {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (_) => const HomePage()),
+              MaterialPageRoute(builder: (_) => const WelcomeBackScreen()),
               (route) => false,
             );
           } else {
@@ -63,13 +66,12 @@ class _UserSignInState extends State<UserSignIn> {
       },
     );
   }
-   @override
+
+  @override
   void dispose() {
     _sub?.cancel();
     super.dispose();
   }
-
-
 
   // supabase function
 
@@ -264,9 +266,9 @@ class _UserSignInState extends State<UserSignIn> {
                     ),
                   ),
 
-                  SizedBox(height: screenheight * 0.35),
-                  // Spacer(),
+                  SizedBox(height: screenheight * 0.4 + 20),
 
+                  // Spacer(),
                   SizedBox(
                     width: screenWidth * 0.8,
                     height: 50,
