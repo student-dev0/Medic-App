@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
+
 class ElongatedAppbarScreen extends StatelessWidget {
   final String assetImage;
   final String name;
@@ -60,8 +63,9 @@ class ElongatedAppbarScreen extends StatelessWidget {
                       child: Container(
                         width: 50,
                         height: 30,
-                        color: Colors.white,
+                        
                         alignment: Alignment.center,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(6),color: Colors.white,),
                         child: Padding(
                           padding: EdgeInsets.only(left: 5),
                           child: Row(
@@ -167,5 +171,3 @@ class ElongatedAppbarScreen extends StatelessWidget {
   }
 }
 
-
-// - assets/images/icon_chat.png

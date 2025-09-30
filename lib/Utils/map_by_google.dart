@@ -15,7 +15,7 @@ class _MappingState extends State<Mapping> {
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
 
-    // how to add markers
+    // Markers added
     setState(() {
       markers.add(
         Marker(
@@ -24,21 +24,21 @@ class _MappingState extends State<Mapping> {
           infoWindow: InfoWindow(title: 'San Francisco'),
         ),
       );
-        markers.add(
+      markers.add(
         Marker(
           markerId: MarkerId('marker_2'),
           position: LatLng(35.7749, -121.4194),
           infoWindow: InfoWindow(title: 'Marker 2'),
         ),
       );
-        markers.add(
+      markers.add(
         Marker(
           markerId: MarkerId('marker_3'),
           position: LatLng(36.7749, -125.4194),
           infoWindow: InfoWindow(title: 'Marker 3'),
         ),
       );
-    }); 
+    });
   }
 
   @override
@@ -52,16 +52,16 @@ class _MappingState extends State<Mapping> {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
-        child: GoogleMap(
-          onMapCreated: _onMapCreated,
-          markers: markers,
-          initialCameraPosition: CameraPosition(
-            target: LatLng(37.7749, -122.4194), // San Francisco coordinates
-            zoom: 12,
+        child: Container(
+          color: Colors.white,
+          child: GoogleMap(
+            onMapCreated: _onMapCreated,
+            markers: markers,
+            initialCameraPosition: const CameraPosition(
+              target: LatLng(37.7749, -122.4194), // San Francisco coordinates
+              zoom: 12,
+            ),
           ),
-
-          // myLocationEnabled: true, // blue dot
-          // myLocationButtonEnabled: true, //  location button
         ),
       ),
     );

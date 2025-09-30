@@ -2,7 +2,6 @@ import 'package:app_links/app_links.dart';
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:medic_clinic_app/models/validation_models.dart";
-//import "package:medic_clinic_app/screens/Profile%20User%20Screens/home_page.dart";
 import "package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart";
 import "package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_up.dart";
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -51,7 +50,7 @@ class _UserSignInState extends State<UserSignIn> {
           // Option B: if you prefer immediate local navigation, check response:
           if (mounted) {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (_) => const WelcomeBackScreen()),
+              MaterialPageRoute(builder: (_) => WelcomeBackScreen()),
               (route) => false,
             );
           } else {

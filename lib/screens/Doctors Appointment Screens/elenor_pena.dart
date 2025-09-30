@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:medic_clinic_app/Utils/direction_map.dart';
+import 'package:medic_clinic_app/Utils/animated_appointment_button.dart';
 import 'package:medic_clinic_app/Utils/elongated_appbar_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic_clinic_app/Utils/mappings.dart';
+import 'package:medic_clinic_app/Utils/map_by_google.dart';
 import 'package:medic_clinic_app/models/schedule_selector_model.dart';
 import 'package:medic_clinic_app/models/time_selector_model.dart';
 
@@ -56,7 +56,6 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                           border: Border.all(width: 2, color: Colors.grey),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(12),
-                          color: Color(0xFFCDCFCE),
                         ),
                         child: Center(
                           child: Text(
@@ -71,7 +70,7 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                       ),
                     ],
                   ),
-                  // SizedBox(width:15),
+
                   Spacer(),
                   Column(
                     children: [
@@ -91,7 +90,6 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                           border: Border.all(width: 2, color: Colors.grey),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(12),
-                          color: Color(0xFFCDCFCE),
                         ),
                         child: Center(
                           child: Text(
@@ -106,7 +104,7 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                       ),
                     ],
                   ),
-                  // SizedBox(width:15),
+
                   Spacer(),
                   Column(
                     children: [
@@ -126,7 +124,6 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                           border: Border.all(width: 2, color: Colors.grey),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(12),
-                          color: Color(0xFFCDCFCE),
                         ),
                         child: Center(
                           child: Row(
@@ -219,11 +216,63 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                 ],
               ),
 
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Location',
+                    style: GoogleFonts.montserrat(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.location_on_outlined,
+                        color: Colors.black54,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          "3891 Ranchview Dr.\nRichardson,\nSan Francisco 62639",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey.shade700,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      const Icon(
+                        Icons.local_hospital_outlined,
+                        color: Colors.black54,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          "Jane Cooper\nMedical College",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey.shade700,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 40),
 
               Mapping(),
 
-              SizedBox(height: 50,),
+              SizedBox(height: 40),
+
+              AnimatedAppointmentButton()
             ],
           ),
         ),

@@ -35,14 +35,18 @@ class _DoctorInfoModelAppointmentState
     extends State<DoctorInfoModelAppointment> {
   @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
-    // double screenheight = MediaQuery.of(context).size.height;
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: () {
-            Navigator.push(
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => EleanorTransition(patient: 413, experience: '5 years', rating: 4.8)),
+          MaterialPageRoute(
+            builder: (_) => EleanorTransition(
+              patient: 413,
+              experience: '5 years',
+              rating: 4.8,
+            ),
+          ),
         );
       },
       child: Container(
