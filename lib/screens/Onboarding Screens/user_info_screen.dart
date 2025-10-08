@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medic_clinic_app/screens/Onboarding%20Screens/identity_set.dart';
-import 'package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart';
+// import 'package:medic_clinic_app/screens/Profile%20User%20Screens/welcome_back_screen.dart';
+import 'package:medic_clinic_app/screens/User%20Authentication%20screens/user_sign_in.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({super.key});
@@ -216,28 +217,32 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
             SizedBox(height: screenheight * 0.05),
         
             IdentitySet(),
+
+            SizedBox(height: screenheight * 0.33),
         
-           SizedBox(height:screenheight * 0.25),
+          
         
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF66CA98),
-                minimumSize: const Size(300, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+          
+               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF66CA98),
+                  minimumSize: const Size(300, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => UserSignIn()),
+                  );
+                },
+                child: const Text(
+                  "Continue",
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => WelcomeBackScreen()),
-                );
-              },
-              child: const Text(
-                "Continue",
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-            ),
+            
           ],
         ),
       ),

@@ -268,23 +268,25 @@ class _UserSignInState extends State<UserSignIn> {
                   SizedBox(height: screenheight * 0.4 + 20),
 
                   // Spacer(),
-                  SizedBox(
-                    width: screenWidth * 0.8,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: _signInUser,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF66CA98),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                  Positioned(bottom:20,
+                    child: SizedBox(
+                      width: screenWidth * 0.8,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: _signInUser,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF66CA98),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        "Sign In",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        child: const Text(
+                          "Sign In",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

@@ -43,7 +43,9 @@ dependencies:
   google_maps_flutter_android: ^2.18.2
   google_maps_flutter_platform_interface: ^2.14.0 
   timeago: ^3.1.0
-
+  lottie: ^3.3.1
+  material_symbols_icons: ^4.2872.2
+  
 
 
  
@@ -90,6 +92,8 @@ flutter:
    - assets/images/icon_Dr.Eleanor_Pena.png
    - assets/images/icon_phone.png
    - assets/images/icon_chat.png
+   - assets/images/Success.json
+   - assets/images/Mask_group_blood_test.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

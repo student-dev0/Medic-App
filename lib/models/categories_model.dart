@@ -18,8 +18,8 @@ class CategoriesModel extends StatelessWidget {
       onTap: () {},
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 120,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
@@ -30,8 +30,8 @@ class CategoriesModel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              width: 100, // Adjust size as needed for the image
-              height: 100, // Adjust size as needed for the image
+              width: 80, // Adjust size as needed for the image
+              height: 80, // Adjust size as needed for the image
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   color: color,

@@ -5,6 +5,7 @@ import 'package:medic_clinic_app/models/doctors_card_model.dart';
 import 'package:medic_clinic_app/models/search_model_homepage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_symbols_icons/symbols.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 8.0, right: 16.0),
                   child: Text(
                     'Welcome Back $User!',
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.outfit(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
                     ),
@@ -88,6 +89,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         hintText: "Search 'heart'",
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         focusedBorder: OutlineInputBorder(
@@ -116,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: FittedBox(
                       fit: BoxFit.contain,
-                      child: Icon(Icons.tune_rounded, color: Colors.white),
+                      child: Icon(Symbols.page_info, color: Colors.white),
                     ),
                   ),
                 ),
@@ -162,10 +165,93 @@ class _HomePageState extends State<HomePage> {
               date: 27,
               month: 'September',
               reviews: 300,
-              amount: 90,
+              amount: 80,
               rating: 4.8,
               time: '${TimeOfDay.now().hourOfPeriod} pm',
               onTap: () {},
+            ),
+
+            SizedBox(height: 10),
+
+            Stack(
+              children: [
+                InkWell(
+                  borderRadius: BorderRadius.circular(12),
+                  onTap: () {},
+                  child: Container(
+                    width: 500,
+                    height: 130,
+
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 12,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFF6C52).withAlpha(230),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0, top: 12),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Blood Test",
+                                style: GoogleFonts.outfit(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Text(
+                                "review your blood test summary",
+                                style: GoogleFonts.lato(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            children: [
+                              Icon(Icons.calendar_month, color: Colors.white),
+                              SizedBox(width: 10),
+                              Text(
+                                '${DateTime.now().day} / ${DateTime.now().month.toString()}',
+                                style: GoogleFonts.sourceSans3(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                Positioned(
+                  left: 10,
+                  right: -50,
+                  top: -170,
+
+                  child: Image(
+                    width: 300,
+                    height: 500,
+                    image: AssetImage(
+                      'assets/images/Mask_group_blood_test.png',
+                    ),
+                  ),
+                ),
+              ],
             ),
 
             SizedBox(height: 15),
@@ -199,13 +285,13 @@ class _HomePageState extends State<HomePage> {
                       color: Color(0xFFFFE2DC),
                       text: 'Cardiologist',
                     ),
-                    SizedBox(width: 12),
+                    SizedBox(width: 15),
                     CategoriesModel(
                       assetImage: 'assets/images/icon_eye.png',
                       color: Color(0xFFE0EAF9),
                       text: 'Ophthamologist',
                     ),
-                    SizedBox(width: 12),
+                    SizedBox(width: 15),
                     CategoriesModel(
                       assetImage: 'assets/images/icon_tooth.png',
                       color: Color(0xFFFFF7DC),
@@ -244,10 +330,12 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 10),
 
-            SizedBox(height: 400,
-              child: SingleChildScrollView(scrollDirection:Axis.vertical,
+            SizedBox(
+              height: 400,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 child: Padding(
-                  padding: const EdgeInsets.only(top:16.0,bottom: 16.0),
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
                   child: Column(
                     children: [
                       DoctorCard(
@@ -265,21 +353,25 @@ class _HomePageState extends State<HomePage> {
                         reviews: 320,
                         rating: 4.9,
                         onTap: () {},
-                      ),DoctorCard(
+                      ),
+                      DoctorCard(
                         assetImage: 'assets/images/image_Dr.Jane_Cooper.png',
                         name: 'Dr Jane Cooper',
                         specialization: 'Nephrologyst',
                         reviews: 320,
                         rating: 4.9,
                         onTap: () {},
-                      ),DoctorCard(
-                        assetImage: 'assets/images/image_Dr.Savannah_Nguyen.png',
+                      ),
+                      DoctorCard(
+                        assetImage:
+                            'assets/images/image_Dr.Savannah_Nguyen.png',
                         name: 'Dr Savannah',
                         specialization: 'Dermatologist',
                         reviews: 320,
                         rating: 4.9,
                         onTap: () {},
-                      ),DoctorCard(
+                      ),
+                      DoctorCard(
                         assetImage: 'assets/images/image_Dr. Jacob_Jones.png',
                         name: 'Dr Jacob Jones',
                         specialization: 'Optician',

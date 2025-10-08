@@ -240,13 +240,13 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                       Expanded(
                         child: Text(
                           "3891 Ranchview Dr.\nRichardson,\nSan Francisco 62639",
-                          style: TextStyle(
+                          style: GoogleFonts.outfit(
                             fontSize: 14,
                             color: Colors.grey.shade700,
                           ),
                         ),
                       ),
-                      const SizedBox(width: 20),
+                      const SizedBox(width: 50),
                       const Icon(
                         Icons.local_hospital_outlined,
                         color: Colors.black54,
@@ -255,7 +255,7 @@ class _EleanorTransitionState extends State<EleanorTransition> {
                       Expanded(
                         child: Text(
                           "Jane Cooper\nMedical College",
-                          style: TextStyle(
+                          style: GoogleFonts.outfit(
                             fontSize: 14,
                             color: Colors.grey.shade700,
                           ),
@@ -272,7 +272,7 @@ class _EleanorTransitionState extends State<EleanorTransition> {
 
               SizedBox(height: 40),
 
-              AnimatedAppointmentButton()
+              AnimatedAppointmentButton(),
             ],
           ),
         ),

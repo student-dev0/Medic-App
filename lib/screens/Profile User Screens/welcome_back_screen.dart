@@ -56,7 +56,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
     double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       bottomNavigationBar: SizedBox(
-        height: screenheight * 0.13,
+        height: screenheight * 0.10,
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topRight: Radius.circular(36),

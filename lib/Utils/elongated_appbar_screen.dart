@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
-
 class ElongatedAppbarScreen extends StatelessWidget {
   final String assetImage;
   final String name;
@@ -63,9 +60,12 @@ class ElongatedAppbarScreen extends StatelessWidget {
                       child: Container(
                         width: 50,
                         height: 30,
-                        
+
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(6),color: Colors.white,),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: Colors.white,
+                        ),
                         child: Padding(
                           padding: EdgeInsets.only(left: 5),
                           child: Row(
@@ -97,31 +97,30 @@ class ElongatedAppbarScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top:20.0),
+                    padding: const EdgeInsets.only(top: 20.0),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: RichText(
                         text: TextSpan(
-                            text: name,
-                            style: GoogleFonts.lato(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                    
-                            children: [
-                              TextSpan(
-                                text: '\n$specialization',
-                                style: GoogleFonts.lato(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.grey[600],
-                                ),
-                              ),
-                            ],
+                          text: name,
+                          style: GoogleFonts.lato(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
+
+                          children: [
+                            TextSpan(
+                              text: '\n$specialization',
+                              style: GoogleFonts.outfit(
+                                fontSize: 16,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                          ],
                         ),
-                      
+                      ),
                     ),
                   ),
                   SizedBox(height: 50),
@@ -141,12 +140,16 @@ class ElongatedAppbarScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top:20.0),
-                    child: Icon(Icons.more_horiz, size: 50, color: Colors.grey[600]),
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Icon(
+                      Icons.more_horiz,
+                      size: 50,
+                      color: Colors.grey[600],
+                    ),
                   ),
                   SizedBox(height: 15),
                   Padding(
-                    padding: const EdgeInsets.only(top:30.0),
+                    padding: const EdgeInsets.only(top: 30.0),
                     child: Row(
                       children: [
                         Text(
@@ -170,4 +173,3 @@ class ElongatedAppbarScreen extends StatelessWidget {
     );
   }
 }
-

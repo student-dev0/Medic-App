@@ -104,7 +104,8 @@ class _UserSignUpState extends State<UserSignUp> {
               key: _formKey,
               child: Column(
                 children: [
-                  Column(crossAxisAlignment: CrossAxisAlignment.center,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         children: [
@@ -268,26 +269,28 @@ class _UserSignUpState extends State<UserSignUp> {
                     ],
                   ),
 
-                  SizedBox(height: screenheight * 0.25 + 10 ),
-                  // Spacer(),
+                  SizedBox(height: screenheight * 0.35),
 
-                  SizedBox(
-                    width: screenWidth * 0.8,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: _agreetoTerms ? _signUpUser : null,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF66CA98),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                  
+                  Positioned(
+                    child: SizedBox(
+                      width: screenWidth * 0.8,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: _agreetoTerms ? _signUpUser : null,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF66CA98),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        child: const Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -304,7 +307,7 @@ class _UserSignUpState extends State<UserSignUp> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => UserSignIn()),
+                            MaterialPageRoute(builder: (_) => UserSignUp()),
                           );
                         },
                         child: const Text(

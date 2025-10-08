@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:medic_clinic_app/screens/Doctors%20Appointment%20Screens/elenor_pena.dart';
 
 class DoctorInfoModelAppointment extends StatefulWidget {
   final String assetImage;
   final String name;
   final String specialization;
-  final int date;
-  final String month;
+  final int date = DateTime.now().day;
+  final int month = DateTime.now().month;
   final int reviews;
   final double rating;
   final double amount;
@@ -18,8 +19,8 @@ class DoctorInfoModelAppointment extends StatefulWidget {
     required this.assetImage,
     required this.name,
     required this.specialization,
-    required this.date,
-    required this.month,
+    required date,
+    required month,
     required this.reviews,
     required this.amount,
     required this.rating,
@@ -51,7 +52,7 @@ class _DoctorInfoModelAppointmentState
       },
       child: Container(
         width: 500,
-        height: 140,
+        height: 130,
         padding: EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
@@ -87,16 +88,16 @@ class _DoctorInfoModelAppointmentState
                           RichText(
                             text: TextSpan(
                               text: widget.name,
-                              style: TextStyle(
-                                fontSize: 18,
+                              style: GoogleFonts.lato(
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                               children: [
                                 TextSpan(
                                   text: '\n${widget.specialization}',
-                                  style: TextStyle(
-                                    fontSize: 16,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 12,
                                     fontWeight: FontWeight.normal,
                                     color: Colors.white70,
                                   ),
@@ -156,24 +157,33 @@ class _DoctorInfoModelAppointmentState
                   const SizedBox(width: 4),
                   Text(
                     (widget.date).toString(),
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
+                    style: GoogleFonts.sourceSans3(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    (widget.month),
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
+                    '/ ${widget.month.toString()}',
+                    style: GoogleFonts.sourceSans3(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
                   ),
                   const SizedBox(width: 16),
                   const Icon(Icons.access_time, size: 20, color: Colors.white),
                   const SizedBox(width: 4),
                   Text(
                     '${widget.time.toString()}:00 PM',
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
+                    style: GoogleFonts.sourceSans3(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
                   ),
                   const Spacer(),
                   Text(
                     ('\$ ${widget.amount}').toString(),
-                    style: const TextStyle(
+                    style: GoogleFonts.inter(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       color: Colors.white,

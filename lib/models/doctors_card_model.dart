@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:medic_clinic_app/screens/Doctors%20Appointment%20Screens/elenor_pena.dart';
 
 class DoctorCard extends StatefulWidget {
@@ -75,16 +76,16 @@ class _DoctorCardState extends State<DoctorCard> {
                           RichText(
                             text: TextSpan(
                               text: widget.name,
-                              style: TextStyle(
-                                fontSize: 18,
+                              style: GoogleFonts.lato(
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                               children: [
                                 TextSpan(
                                   text: '\n${widget.specialization}',
-                                  style: TextStyle(
-                                    fontSize: 16,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 12,
                                     fontWeight: FontWeight.normal,
                                     color: Colors.grey[600],
                                   ),
